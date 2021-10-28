@@ -12,8 +12,8 @@ class ConcurrentAccessSafeDictTests: XCTestCase {
 
     static var sut = ViewController.safeDict
 
-    func testUnsafeDictionaryConcurrentQueueWithBarrier() {
-        /// This is on unsafe dictionary and to handle concurrent read write using barrier flags.
+    func testSafeDictionaryConcurrentQueueWithBarrier() {
+        /// This is on safe dictionary and to handle concurrent read write using locks.
         
         let dispatchQueue = DispatchQueue(label: "Concurrent Queue", qos: .userInitiated, attributes: .concurrent)
         let write: () -> String = {
